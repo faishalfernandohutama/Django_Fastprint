@@ -1,7 +1,3 @@
-Tentu, ini adalah draf README.md yang profesional, lengkap, dan terstruktur khusus untuk repositori GitHub Anda. Dokumentasi ini dirancang agar HRD atau Reviewer teknis dari FastPrint bisa dengan mudah mengerti cara instalasi dan fitur-fitur yang Anda buat.
-
-Anda bisa menyalin kode Markdown di bawah ini dan menempelkannya (paste) ke file README.md di GitHub Anda.
-
 🖨️ Tes Teknis Programmer - FastPrint Indonesia
 Repositori ini berisi solusi untuk Tes Teknis Programmer FastPrint. Aplikasi ini adalah sistem manajemen produk berbasis web yang dibangun menggunakan Django Framework. Sistem ini mengambil data dari API eksternal, menyimpannya ke database relasional, dan menyediakan fitur CRUD dengan validasi ketat.
 
