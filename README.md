@@ -1,0 +1,118 @@
+Tentu, ini adalah draf README.md yang profesional, lengkap, dan terstruktur khusus untuk repositori GitHub Anda. Dokumentasi ini dirancang agar HRD atau Reviewer teknis dari FastPrint bisa dengan mudah mengerti cara instalasi dan fitur-fitur yang Anda buat.
+
+Anda bisa menyalin kode Markdown di bawah ini dan menempelkannya (paste) ke file README.md di GitHub Anda.
+
+🖨️ Tes Teknis Programmer - FastPrint Indonesia
+Repositori ini berisi solusi untuk Tes Teknis Programmer FastPrint. Aplikasi ini adalah sistem manajemen produk berbasis web yang dibangun menggunakan Django Framework. Sistem ini mengambil data dari API eksternal, menyimpannya ke database relasional, dan menyediakan fitur CRUD dengan validasi ketat.
+
+📋 Fitur Utama
+Aplikasi ini telah memenuhi seluruh poin persyaratan (1-11) yang diminta dalam soal tes:
+
+Sinkronisasi API Otomatis 🔄
+
+Mengambil data dari API FastPrint dengan autentikasi dinamis (Username & Password berbasis tanggal/jam).
+
+Data dipetakan secara otomatis ke database lokal.
+
+Struktur Database Relasional 🗂️
+
+Menggunakan 3 tabel terpisah: Produk, Kategori, dan Status (Normalisasi Database).
+
+Filtering Data 🔍
+
+Hanya menampilkan produk dengan status "bisa dijual" pada halaman utama.
+
+Manajemen Produk (CRUD) 📝
+
+Create: Menambah produk baru dengan validasi.
+
+Read: Menampilkan daftar produk.
+
+Update: Mengedit data produk.
+
+Delete: Menghapus produk dengan konfirmasi keamanan.
+
+Validasi & Keamanan 🛡️
+
+Validasi Form: Nama wajib diisi, Harga wajib angka dan tidak boleh negatif.
+
+Javascript Confirm: Alert konfirmasi saat menghapus data.
+
+Menggunakan Django REST Framework Serializer untuk validasi data API.
+
+Desain Responsif 📱
+
+Antarmuka menggunakan Bootstrap 5 yang rapi dan mudah digunakan.
+
+🛠️ Teknologi yang Digunakan
+Backend: Python 3.12, Django 5.x
+
+Database: SQLite (Default) / Kompatibel dengan PostgreSQL & MySQL
+
+API & Serializer: Django REST Framework (DRF), Requests Library
+
+Frontend: HTML5, Bootstrap 5, JavaScript (SweetAlert/Native Confirm)
+
+Utilities: Pytz (Timezone handling), Hashlib (MD5 Generation)
+
+
+⚙️ Instalasi & Cara Menjalankan
+Ikuti langkah-langkah berikut untuk menjalankan proyek ini di komputer lokal Anda:
+
+1. Clone Repositori
+Bash
+git clone https://github.com/faishalfernandohutama/Django_Fastprint.git
+cd Django_Fastprint
+2. Buat Virtual Environment (Disarankan)
+Bash
+# Untuk Windows
+python -m venv venv
+venv\Scripts\activate
+
+# Untuk Mac/Linux
+python3 -m venv venv
+source venv/bin/activate
+3. Install Dependencies
+Bash
+pip install django djangorestframework requests pytz
+(Atau jika ada file requirements.txt: pip install -r requirements.txt)
+
+4. Migrasi Database
+Siapkan struktur database (tabel Produk, Kategori, Status):
+
+Bash
+python manage.py makemigrations
+python manage.py migrate
+5. Jalankan Server
+Bash
+python manage.py runserver
+
+📸 Panduan Penggunaan
+1. Sinkronisasi Data (Sync)
+Pada halaman utama, klik tombol kuning "🔄 Sync API". Sistem akan:
+
+Membuat kredensial username/password sesuai format tanggal saat ini.
+
+Menghubungi API recruitment.fastprint.co.id.
+
+Menyimpan data Kategori dan Status baru jika belum ada.
+
+Menyimpan/Update data Produk.
+
+2. Menambah & Mengedit Data
+Klik tombol "Tambah" untuk input manual.
+
+Sistem akan menolak jika harga diisi huruf atau angka negatif.
+
+3. Menghapus Data
+Klik tombol "Hapus".
+
+Akan muncul pop-up konfirmasi browser untuk mencegah penghapusan tidak sengaja.
+
+📝 Catatan Pengembang
+Proyek ini menggunakan library pytz untuk memastikan timestamp pembuatan password API sesuai dengan Waktu Indonesia Barat (Asia/Jakarta), menghindari kegagalan autentikasi server.
+
+Sesuai instruksi Poin 9, proyek ini memanfaatkan serializers dari Django Rest Framework untuk memproses data yang masuk.
+
+Author
+Faishal Fernando Hutama GitHub: faishalfernandohutama
