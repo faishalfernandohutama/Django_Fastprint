@@ -36,9 +36,9 @@ Javascript Confirm: Alert konfirmasi saat menghapus data.
 
 Menggunakan Django REST Framework Serializer untuk validasi data API.
 
-Desain Responsif 📱
+Desain 📱
 
-Antarmuka menggunakan Bootstrap 5 yang rapi dan mudah digunakan.
+Antarmuka menggunakan Css Polos yang rapi dan mudah digunakan.
 
 🛠️ Teknologi yang Digunakan
 Backend: Python 3.12, Django 5.x
