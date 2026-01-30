@@ -159,11 +159,17 @@ Keamanan UX (Poin 8): Konfirmasi JavaScript Alert saat menghapus data.
 Teknologi: Django + Django REST Framework Serializers.
 
 🔌 Daftar Endpoint URL
+
 Method,Endpoint,Deskripsi
+
 GET,/produk/,"Halaman utama (Menampilkan produk ""bisa dijual"")"
+
 GET,/produk/sync/,Memicu proses sinkronisasi API
+
 GET/POST,/produk/tambah/,Form tambah produk baru
+
 GET/POST,/produk/edit/<id>/,Form edit produk
+
 POST,/produk/hapus/<id>/,Menghapus produk (Butuh Konfirmasi)
 
 Author
