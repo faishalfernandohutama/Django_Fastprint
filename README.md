@@ -110,5 +110,61 @@ Proyek ini menggunakan library pytz untuk memastikan timestamp pembuatan passwor
 
 Sesuai instruksi Poin 9, proyek ini memanfaatkan serializers dari Django Rest Framework untuk memproses data yang masuk.
 
+
+### 🗂️ Struktur Database (ERD)
+Diagram ini dibuat berdasarkan `models.py` yang digunakan dalam proyek ini:
+
+erDiagram
+    PRODUK }|--|| KATEGORI : "Memiliki Kategori"
+    PRODUK }|--|| STATUS : "Memiliki Status"
+
+    PRODUK {
+        int id_produk PK "Primary Key (Input Manual/API)"
+        string nama_produk "Max 255 Char"
+        int harga "Integer (Harus Angka)"
+        int kategori_id FK "Relasi ke Tabel Kategori"
+        int status_id FK "Relasi ke Tabel Status"
+    }
+
+    KATEGORI {
+        int id_kategori PK
+        string nama_kategori
+    }
+
+    STATUS {
+        int id_status PK
+        string nama_status
+    }
+
+**Penjelasan Teknis:**
+* **PK (Primary Key):** Menandakan `id_produk`, `id_kategori`, dan `id_status` adalah kunci utama.
+* **FK (Foreign Key):** Menandakan hubungan tabel Produk ke Kategori dan Status.
+* **`}|--||`**: Simbol ini berarti "Banyak ke Satu" (Many-to-One). Artinya: Banyak Produk bisa memiliki Satu Kategori yang sama.
+
+📋 Fitur Utama
+Aplikasi ini telah memenuhi persyaratan 1-11:
+
+Sinkronisasi API Otomatis: Mengambil data real-time dengan autentikasi dinamis (MD5 berdasarkan tanggal/jam server).
+Database Relasional: Menggunakan ForeignKey untuk efisiensi data.
+Filtering Cerdas: Hanya menampilkan produk dengan status "bisa dijual" di halaman utama.
+CRUD Lengkap:
+Create: Tambah produk baru.
+Read: List produk dengan pagination (opsional).
+Update: Edit data produk.
+Delete: Hapus data produk.
+Validasi Ketat (Poin 7):
+Harga: Harus angka & tidak boleh negatif.
+Nama: Wajib diisi.
+Keamanan UX (Poin 8): Konfirmasi JavaScript Alert saat menghapus data.
+Teknologi: Django + Django REST Framework Serializers.
+
+🔌 Daftar Endpoint URL
+Method,Endpoint,Deskripsi
+GET,/produk/,"Halaman utama (Menampilkan produk ""bisa dijual"")"
+GET,/produk/sync/,Memicu proses sinkronisasi API
+GET/POST,/produk/tambah/,Form tambah produk baru
+GET/POST,/produk/edit/<id>/,Form edit produk
+POST,/produk/hapus/<id>/,Menghapus produk (Butuh Konfirmasi)
+
 Author
 Faishal Fernando Hutama GitHub: faishalfernandohutama
